@@ -16,7 +16,7 @@ class Restaurant {
         int ticks=0;
         std::vector<ofImage> people;
         int money =0;
-
+        int leavingsClients;
     public:
         Restaurant();
         Player* getPlayer();
@@ -36,8 +36,12 @@ class Restaurant {
         void tick();
         void render();
         void keyPressed(int key);
+<<<<<<< HEAD
 
         int getMoney(){return money;}
+=======
+        int getLeavingsClients(){return this->leavingsClients;}
+>>>>>>> addLoseState
 };
 
 

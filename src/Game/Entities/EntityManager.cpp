@@ -16,7 +16,9 @@ void EntityManager::removeLeavingClients(){
         tempClient = firstClient->nextClient;
         delete firstClient;
         firstClient = tempClient;
+        setLoseGame(getLoseGame()-1);
     }
+
 }
 void EntityManager::render(){
     for(int i=0; i<entities.size(); i++){

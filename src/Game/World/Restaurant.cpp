@@ -115,7 +115,8 @@ void Restaurant::tick() {
     }
     player->tick();
     entityManager->tick();
-
+    
+    leavingsClients = entityManager->getLoseGame();
 }
 
 
