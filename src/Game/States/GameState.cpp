@@ -8,6 +8,7 @@ void GameState::tick() {
 	if(restaurant->getLeavingsClients() <= 0 ){
 		setNextState("LoseState");
 		setFinished(true);
+		this->restaurant = new Restaurant();
 	}
 }
 void GameState::render() {
