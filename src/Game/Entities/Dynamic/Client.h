@@ -6,6 +6,7 @@ class Client: public Entity{
         Burger* burger;
         int originalPatience;
         int patience=2000;
+        ofColor red = ofColor(255,255,255);
     public:
         Client(int, int, int, int, ofImage, Burger*);
         ~Client();

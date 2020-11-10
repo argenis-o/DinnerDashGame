@@ -8,7 +8,18 @@ Client::~Client(){
 }
 void Client::render(){
     burger->render();
-    ofSetColor (255,255,255);
+    switch(patience){
+        case 1500:
+            red = ofColor(255,143,139);
+            break;
+        case 1000:
+            red = ofColor(255,69,76);
+            break;
+        case 500:
+            red = ofColor(255,0,0);
+            break;
+    }
+    ofSetColor(red);
     sprite.draw(x, y, width, height);
     // ofDrawRectangle(getBounds());
     if(nextClient != nullptr){
