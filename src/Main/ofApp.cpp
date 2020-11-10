@@ -7,12 +7,10 @@ void ofApp::setup(){
 	//States
 	menuState = new MenuState();
 	gameState = new GameState();
-<<<<<<< HEAD
+
 	winningState = new WinningState();
-=======
 
 	loseState = new LoseState();
->>>>>>> addLoseState
 	// Initial State
 	currentState = menuState;
 }

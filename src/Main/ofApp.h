@@ -3,11 +3,9 @@
 #include "ofMain.h"
 #include "MenuState.h"
 #include "GameState.h"
-<<<<<<< HEAD
 #include "WinningState.h"
-=======
 #include "LoseState.h"
->>>>>>> addLoseState
+
 
 class ofApp : public ofBaseApp{
 
@@ -15,12 +13,9 @@ private:
 	State *currentState;
 	MenuState *menuState;
 	GameState *gameState;
-<<<<<<< HEAD
 	WinningState *winningState;
-
-=======
 	LoseState *loseState;
->>>>>>> addLoseState
+
 
 public:
 		void setup();

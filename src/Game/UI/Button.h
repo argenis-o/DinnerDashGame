@@ -1,8 +1,5 @@
 #pragma once
-<<<<<<< HEAD
 
-=======
->>>>>>> addLoseState
 #include "ofMain.h"
 
 class Button {
