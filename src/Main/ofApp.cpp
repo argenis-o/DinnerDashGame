@@ -7,6 +7,8 @@ void ofApp::setup(){
 	//States
 	menuState = new MenuState();
 	gameState = new GameState();
+
+	loseState = new LoseState();
 	// Initial State
 	currentState = menuState;
 }
@@ -20,6 +22,8 @@ void ofApp::update(){
 				currentState = menuState;
 			}else if(currentState->getNextState() == "Game"){
 				currentState = gameState;
+			}else if(currentState->getNextState() == "LoseState"){
+				currentState = loseState;
 			}
 			currentState->reset();
 		}
