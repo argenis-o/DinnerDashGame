@@ -55,6 +55,12 @@ void Player::keyPressed(int key){
             }
         }
     }
+    if(key == 'u'){
+        BaseCounter* ac = getActiveCounter();
+        if(ac != nullptr){
+            burger->removeIngredient();
+        }
+    }
 }
 BaseCounter* Player::getActiveCounter(){
     for(Entity* e:entityManager->entities){

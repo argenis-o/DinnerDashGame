@@ -16,6 +16,7 @@ private:
 public:
     Burger(int, int, int, int);
     void addIngredient(Item *item);
+    void removeIngredient();
     void render();
     void clear();
     void setY(int y){
