@@ -2,6 +2,7 @@
 
 MenuState::MenuState() {
 	startButton = new Button(ofGetWidth()/2, ofGetHeight()/2, 64, 50, "Start");
+	tittle.load("images/tittle.jpg");
 }
 void MenuState::tick() {
 	startButton->tick();
@@ -12,7 +13,8 @@ void MenuState::tick() {
 	}
 }
 void MenuState::render() {
-	ofSetBackgroundColor(230, 230, 250);
+	// ofSetBackgroundColor(230, 230, 250);
+	tittle.draw(0,0,ofGetWidth(),ofGetHeight());
 	startButton->render();
 }
 
