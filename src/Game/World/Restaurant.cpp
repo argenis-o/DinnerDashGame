@@ -73,23 +73,44 @@ void Restaurant::initCounters(){
     Decor.load("images/sprite.png");
     tableIMG.cropFrom(Decor,20,27,63,53);
     chairImg.cropFrom(Decor,107,13,32,37);
-    entityManager->addEntity(new BaseCounter(counterWidth*2,ofGetHeight()-yOffset, counterWidth, 100, nullptr, tableIMG));
-    entityManager->addEntity(new BaseCounter(counterWidth+64,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth+64,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*3+20,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*3+20,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
+    int NewDecor = ofRandom(2);
+    switch (NewDecor){
+        case 0:
+            entityManager->addEntity(new BaseCounter(counterWidth*2,ofGetHeight()-yOffset, counterWidth, 100, nullptr, tableIMG));
+            entityManager->addEntity(new BaseCounter(counterWidth+64,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth+64,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*3+20,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*3+20,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
 
-    entityManager->addEntity(new BaseCounter(counterWidth*6,ofGetHeight()-yOffset, counterWidth, 100, nullptr, tableIMG));
-    entityManager->addEntity(new BaseCounter(counterWidth*5+64,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*5+64,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*7+10,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*7+10,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*6,ofGetHeight()-yOffset, counterWidth, 100, nullptr, tableIMG));
+            entityManager->addEntity(new BaseCounter(counterWidth*5+64,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*5+64,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*7+10,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*7+10,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
 
-    entityManager->addEntity(new BaseCounter(counterWidth*4,ofGetHeight()-yOffset-150, counterWidth, 100, nullptr, tableIMG));
-    entityManager->addEntity(new BaseCounter(counterWidth*3+64,ofGetHeight()-yOffset-150, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*3+64,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150, counterWidth/4, 102/2, nullptr, chairImg));
-    entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*4,ofGetHeight()-yOffset-150, counterWidth, 100, nullptr, tableIMG));
+            entityManager->addEntity(new BaseCounter(counterWidth*3+64,ofGetHeight()-yOffset-150, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*3+64,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
+            break;
+        case 1:
+            entityManager->addEntity(new BaseCounter(counterWidth*5,ofGetHeight()-yOffset+50, counterWidth, 100, nullptr, tableIMG));
+            entityManager->addEntity(new BaseCounter(counterWidth*4+64,ofGetHeight()-yOffset+50, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*4+64,ofGetHeight()-yOffset+50+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*6+20,ofGetHeight()-yOffset+50, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*6+20,ofGetHeight()-yOffset+50+60, counterWidth/4, 102/2, nullptr, chairImg));
+
+
+            entityManager->addEntity(new BaseCounter(counterWidth*4,ofGetHeight()-yOffset-150, counterWidth, 100, nullptr, tableIMG));
+            entityManager->addEntity(new BaseCounter(counterWidth*3+64,ofGetHeight()-yOffset-150, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*3+64,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
+            break;
+
+
+    }
 
 
 

@@ -35,13 +35,14 @@ bool Burger::equals(Burger *target){// same ingredients and quantities //order i
         if(quantityOf(this->ingredients, "tomato") != quantityOf(target->ingredients,"tomato")){
             flag = false;
         }
-        if(quantityOf(this->ingredients, "burger") != quantityOf(target->ingredients,"burger")){
+        if(quantityOf(this->ingredients, "patty") != quantityOf(target->ingredients,"patty")){
             flag = false;
         }
-        if(quantityOf(this->ingredients, "botBread") != quantityOf(target->ingredients,"botBread")){
+        if(quantityOf(this->ingredients, "bottomBun") != quantityOf(target->ingredients,"bottomBun")){
             flag = false;
         }
-        if(quantityOf(this->ingredients, "tomato") != quantityOf(target->ingredients,"topBread")){
+        if(quantityOf(this->ingredients, "topBun") != quantityOf(target->ingredients,"topBun")){
+
             flag = false;
         }
         return flag;
