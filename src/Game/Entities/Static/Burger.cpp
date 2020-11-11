@@ -22,6 +22,43 @@ void Burger::removeIngredient(){
 
 }
 
+bool Burger::equals(Burger *target){// same ingredients and quantities //order is irrelevant
+    if(this->ingredients.size() == target->ingredients.size()){
+        string temp;
+        bool flag = true;
+        if(quantityOf(this->ingredients, "cheese") != quantityOf(target->ingredients,"cheese")){
+            flag = false;
+        }
+        if(quantityOf(this->ingredients, "lettuce") != quantityOf(target->ingredients,"lettuce")){
+            flag = false;
+        }
+        if(quantityOf(this->ingredients, "tomato") != quantityOf(target->ingredients,"tomato")){
+            flag = false;
+        }
+        if(quantityOf(this->ingredients, "burger") != quantityOf(target->ingredients,"burger")){
+            flag = false;
+        }
+        if(quantityOf(this->ingredients, "botBread") != quantityOf(target->ingredients,"botBread")){
+            flag = false;
+        }
+        if(quantityOf(this->ingredients, "tomato") != quantityOf(target->ingredients,"topBread")){
+            flag = false;
+        }
+        return flag;
+    }else{
+        return false;
+    }
+}
+
+int Burger::quantityOf(vector<Item*> ingredients,string ingredientName){
+        int temp = 0;
+        for (Item *ingredient : ingredients)
+        {
+            if(ingredient->name == ingredientName){temp += 1;}
+        }
+        return temp;
+}
+
 void Burger::render(){
     int counter = 1;
     for (Item* ingredient:ingredients){
