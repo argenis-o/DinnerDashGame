@@ -7,6 +7,7 @@ Client::~Client(){
     burger->~Burger();
 }
 void Client::render(){
+    ofSetColor(255,255,255);
     burger->render();
     switch(patience){
         case 1500:
