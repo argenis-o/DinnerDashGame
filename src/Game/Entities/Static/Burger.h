@@ -22,6 +22,8 @@ public:
     void setY(int y){
         this->y = y;
     }
+    bool equals(Burger *target);
+    int quantityOf(vector<Item*> ingredients, string ingredientName);
 };
 
 
