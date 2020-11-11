@@ -41,6 +41,11 @@ void Restaurant::initItems(){
     burger = new Item(burgerImg, "patty");
     botBread = new Item(botBreadImg, "bottomBun");
     topBread = new Item(topBreadImg, "topBun");
+    
+    tempIngredient.push_back(burger);
+    tempIngredient.push_back(cheese);
+    tempIngredient.push_back(tomato);
+    tempIngredient.push_back(lettuce);
 }
 void Restaurant::initCounters(){
     int counterWidth = 96;
@@ -123,11 +128,132 @@ void Restaurant::tick() {
 void Restaurant::generateClient(){
     Burger* b = new Burger(72, 100, 50, 25);
     b->addIngredient(botBread);
-    b->addIngredient(burger);
-    b->addIngredient(cheese);
-    b->addIngredient(tomato);
-    b->addIngredient(lettuce);
+    int temp = ofRandom(24);
+    switch(temp){
+        case 0: 
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[3]); break;
+        case 1: 
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[2]); break;
+        case 2: 
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[3]); break;
+        case 3: 
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[1]); break;
+        case 4: 
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[2]); break;
+        case 5: 
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[1]); break;
+        
+        case 6: 
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[3]); break;
+        case 7: 
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[2]); break;
+        case 8: 
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[3]); break;
+        case 9: 
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[0]); break;
+        case 10: 
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[2]); break;
+        case 11: 
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[0]); break;
+        case 12: 
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[3]); break;
+        case 13: 
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[1]); break;
+        case 14: 
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[3]); break;
+        case 15: 
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[0]); break;
+        case 16: 
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[1]); break;
+        case 17: 
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[0]); break;
+        case 18: 
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[2]); break;
+        case 19: 
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[1]); break;
+        case 20: 
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[2]); break;
+        case 21: 
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[0]); break;
+        case 22: 
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[0]);
+            b->addIngredient(tempIngredient[1]); break;
+        default:
+            b->addIngredient(tempIngredient[3]);
+            b->addIngredient(tempIngredient[2]);
+            b->addIngredient(tempIngredient[1]);
+            b->addIngredient(tempIngredient[0]); break;
+    }
     b->addIngredient(topBread);
+
     entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b));
 }
 void Restaurant::render() {
