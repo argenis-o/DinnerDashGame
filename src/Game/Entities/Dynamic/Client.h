@@ -16,6 +16,8 @@ class Client: public Entity{
         Client* nextClient=nullptr;
         bool isLeaving=false;
 
+        int getPatience(){return patience;}
+
 
 
 };

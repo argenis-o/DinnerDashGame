@@ -39,7 +39,7 @@ class Restaurant {
 
         int getMoney(){return money;}
 
-        int getLeavingsClients(){return this->leavingsClients;}
+        int getLeavingsClients(){return leavingsClients;}
 
 };
 

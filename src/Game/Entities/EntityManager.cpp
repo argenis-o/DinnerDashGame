@@ -14,9 +14,10 @@ void EntityManager::removeLeavingClients(){
     Client* tempClient = nullptr;
     while(firstClient != nullptr && firstClient->isLeaving){
         tempClient = firstClient->nextClient;
+        patience = firstClient->getPatience();
+        if(patience == 0){loseGame -= 1;}
         delete firstClient;
         firstClient = tempClient;
-        setLoseGame(getLoseGame()-1);
     }
 
 }
