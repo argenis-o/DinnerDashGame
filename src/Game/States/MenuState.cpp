@@ -1,8 +1,8 @@
 #include "MenuState.h"
 
 MenuState::MenuState() {
-	startButton = new Button(ofGetWidth()/2, ofGetHeight()/2, 64, 50, "Start");
-	tittle.load("images/title.jpg");
+	startButton = new Button(ofGetWidth()/2 -40, ofGetHeight()/2 + 150, 64, 50, "Start");
+	title.load("images/title.jpg");
 }
 void MenuState::tick() {
 	startButton->tick();
@@ -15,7 +15,7 @@ void MenuState::tick() {
 void MenuState::render() {
 	// ofSetBackgroundColor(230, 230, 250);
 	ofSetColor(255);
-	tittle.draw(0,0,ofGetWidth(),ofGetHeight());
+	title.draw(0,0,ofGetWidth(),ofGetHeight());
 	startButton->render();
 }
 
