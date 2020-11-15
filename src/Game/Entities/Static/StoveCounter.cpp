@@ -4,6 +4,7 @@ StoveCounter::StoveCounter(int x, int y, int width, int height,Item* item, ofIma
     alarm.load("sounds/alarm.wav");
     checkMark.load("images/checkMark.png");
     setTimer(this->TIME_OF_PATTY);
+    this->item = item;
 }
 
 void StoveCounter::runTimer(){
@@ -18,8 +19,13 @@ void StoveCounter::runTimer(){
 
 void StoveCounter::cook(){
     runTimer();
-    while(getTimer() == 0){
-        //Puede recoger el patty y verlo display
+    while(getTimer() == 0){// to show the item the time that the player dont get the patty
+        checkMark.draw(x+width/2 -25, y-80, 50, 30);
         showItem();
+    }
+}
+void StoveCounter::render(){
+    if(item != nullptr && item->name == "patty"){
+        cook();
     }
 }
