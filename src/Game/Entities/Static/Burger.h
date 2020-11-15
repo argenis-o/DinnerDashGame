@@ -7,11 +7,16 @@
 
 #include "Item.h"
 #include "Entity.h"
+#include <stack>
 
 class Burger {
 private:
     int x,y,width,height;
- vector<Item*> ingredients;
+    vector<Item*> ingredients;
+    stack <Item*> ingr;
+    stack <Item*> copy;
+    
+
 
 public:
     Burger(int, int, int, int);
@@ -23,7 +28,9 @@ public:
         this->y = y;
     }
     bool equals(Burger *target);
-    int quantityOf(vector<Item*> ingredients, string ingredientName);
+    int quantityOf(stack<Item*> &ingredients, string ingredientName);
+    
+
 };
 
 
