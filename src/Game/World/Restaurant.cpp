@@ -95,11 +95,11 @@ void Restaurant::initCounters(){
             entityManager->addEntity(new BaseCounter(counterWidth*5+10,ofGetHeight()-yOffset-150+60, counterWidth/4, 102/2, nullptr, chairImg));
             break;
         case 1:
-            entityManager->addEntity(new BaseCounter(counterWidth*5,ofGetHeight()-yOffset+50, counterWidth, 100, nullptr, tableIMG));
-            entityManager->addEntity(new BaseCounter(counterWidth*4+64,ofGetHeight()-yOffset+50, counterWidth/4, 102/2, nullptr, chairImg));
-            entityManager->addEntity(new BaseCounter(counterWidth*4+64,ofGetHeight()-yOffset+50+60, counterWidth/4, 102/2, nullptr, chairImg));
-            entityManager->addEntity(new BaseCounter(counterWidth*6+20,ofGetHeight()-yOffset+50, counterWidth/4, 102/2, nullptr, chairImg));
-            entityManager->addEntity(new BaseCounter(counterWidth*6+20,ofGetHeight()-yOffset+50+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*5,ofGetHeight()-yOffset, counterWidth, 100, nullptr, tableIMG));
+            entityManager->addEntity(new BaseCounter(counterWidth*4+64,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*4+64,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*6+20,ofGetHeight()-yOffset, counterWidth/4, 102/2, nullptr, chairImg));
+            entityManager->addEntity(new BaseCounter(counterWidth*6+20,ofGetHeight()-yOffset+60, counterWidth/4, 102/2, nullptr, chairImg));
 
 
             entityManager->addEntity(new BaseCounter(counterWidth*4,ofGetHeight()-yOffset-150, counterWidth, 100, nullptr, tableIMG));
@@ -148,132 +148,22 @@ void Restaurant::tick() {
 
 void Restaurant::generateClient(){
     Burger* b = new Burger(72, 100, 50, 25);
-    b->addIngredient(botBread);
-    int temp = ofRandom(24);
-    switch(temp){
-        case 0: 
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[3]); break;
-        case 1: 
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[2]); break;
-        case 2: 
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[3]); break;
-        case 3: 
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[1]); break;
-        case 4: 
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[2]); break;
-        case 5: 
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[1]); break;
-        
-        case 6: 
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[3]); break;
-        case 7: 
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[2]); break;
-        case 8: 
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[3]); break;
-        case 9: 
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[0]); break;
-        case 10: 
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[2]); break;
-        case 11: 
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[0]); break;
-        case 12: 
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[3]); break;
-        case 13: 
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[1]); break;
-        case 14: 
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[3]); break;
-        case 15: 
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[0]); break;
-        case 16: 
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[1]); break;
-        case 17: 
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[0]); break;
-        case 18: 
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[2]); break;
-        case 19: 
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[1]); break;
-        case 20: 
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[2]); break;
-        case 21: 
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[0]); break;
-        case 22: 
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[0]);
-            b->addIngredient(tempIngredient[1]); break;
-        default:
-            b->addIngredient(tempIngredient[3]);
-            b->addIngredient(tempIngredient[2]);
-            b->addIngredient(tempIngredient[1]);
-            b->addIngredient(tempIngredient[0]); break;
-    }
     b->addIngredient(topBread);
+
+    for(int i = 0; i<4; i++){
+        int temp = ofRandom(0,4);
+        b->addIngredient(tempIngredient[temp]);
+    }
+    // int temp = ofRandom(1);
+    // b->addIngredient(tempIngredient[0]);
+    //  temp = ofRandom(5);
+    // b->addIngredient(tempIngredient[0]);
+    //  temp = ofRandom(5);
+    // b->addIngredient(tempIngredient[0]);
+    //  temp = ofRandom(5);
+    // b->addIngredient(tempIngredient[0]);
+
+    b->addIngredient(botBread);
 
     entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b));
 }
@@ -296,3 +186,127 @@ void Restaurant::keyPressed(int key) {
         serveClient();
     }
 }
+
+    // switch(temp){
+    //     case 0: 
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[3]); break;
+    //     case 1: 
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[2]); break;
+    //     case 2: 
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[3]); break;
+    //     case 3: 
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[1]); break;
+    //     case 4: 
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[2]); break;
+    //     case 5: 
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[1]); break;
+        
+    //     case 6: 
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[3]); break;
+    //     case 7: 
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[2]); break;
+    //     case 8: 
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[3]); break;
+    //     case 9: 
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[0]); break;
+    //     case 10: 
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[2]); break;
+    //     case 11: 
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[0]); break;
+    //     case 12: 
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[3]); break;
+    //     case 13: 
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[1]); break;
+    //     case 14: 
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[3]); break;
+    //     case 15: 
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[0]); break;
+    //     case 16: 
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[1]); break;
+    //     case 17: 
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[0]); break;
+    //     case 18: 
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[2]); break;
+    //     case 19: 
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[1]); break;
+    //     case 20: 
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[2]); break;
+    //     case 21: 
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[0]); break;
+    //     case 22: 
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[0]);
+    //         b->addIngredient(tempIngredient[1]); break;
+    //     default:
+    //         b->addIngredient(tempIngredient[3]);
+    //         b->addIngredient(tempIngredient[2]);
+    //         b->addIngredient(tempIngredient[1]);
+    //         b->addIngredient(tempIngredient[0]); break;
+    // }
