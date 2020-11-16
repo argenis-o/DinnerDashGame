@@ -5,8 +5,8 @@ class Client: public Entity{
     private:
         Burger* burger;
         int originalPatience;
-        int patience=2000;
-        ofColor red = ofColor(255,255,255);
+        int patience;
+        ofColor red;
     public:
         Client(int, int, int, int, ofImage, Burger*);
         ~Client();
@@ -19,7 +19,10 @@ class Client: public Entity{
         Burger* getBurger(){return burger;}
 
         int getPatience(){return patience;}
-
+        void setPatience(int patience){this->patience = patience;}
+        
+        ofColor getRed(){return this->red;}
+        void setRed(ofColor red){this->red.set(red);}
 
 
 };

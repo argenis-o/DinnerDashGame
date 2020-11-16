@@ -1,14 +1,11 @@
-#include "Client.h"
-
-Client::Client(int x, int y, int width, int height, ofImage sprite, Burger* burger): Entity(x, y, width, height, sprite){
+#include "Inspector.h"
+Inspector::Inspector(int x, int y, int width, int height, ofImage sprite, Burger* burger): Client(x,y,width,height,sprite,burger){
     this->burger = burger;
-    setPatience(2000);
-    setRed((255,255,255));
 }
-Client::~Client(){
+Inspector::~Inspector(){
     burger->~Burger();
 }
-void Client::render(){
+void Inspector::render(){
     ofSetColor(255,255,255);
     burger->render();
     switch(getPatience()){
@@ -30,7 +27,7 @@ void Client::render(){
     }
 }
 
-void Client::tick(){
+void Inspector::tick(){
     setPatience(getPatience()-1);
     burger->setY(y);
     if(getPatience() == 0){
@@ -41,7 +38,7 @@ void Client::tick(){
     }
 }
 
-int Client::serve(Burger* burger){
+int Inspector::serve(Burger* burger){
     isLeaving = true;
     return 10;
 }

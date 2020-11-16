@@ -37,6 +37,7 @@ class Restaurant {
         void render();
         void keyPressed(int key);
         int getMoney(){return money;}
+        void setMoney(int money){this->money = money;}
         int getLeavingsClients(){return leavingsClients;}
 
         
