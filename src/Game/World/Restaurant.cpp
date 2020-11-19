@@ -145,6 +145,10 @@ void Restaurant::tick() {
     entityManager->tick();
     
     leavingsClients = entityManager->getLoseGame();
+    if(entityManager->getReview()){
+        setMoney(getMoney()/2);
+        entityManager->setReview();
+    }
 }
 
 
@@ -158,7 +162,7 @@ void Restaurant::generateClient(){
     }
     b->addIngredient(botBread);
 
-    entityManager->addClient(new Client(0, 50, 64, 72,people[ofRandom(8)], b));
+    entityManager->addClient(new Inspector(0, 50, 64, 72,people[ofRandom(8)], b));
 }
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());

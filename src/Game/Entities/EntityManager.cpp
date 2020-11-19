@@ -15,7 +15,12 @@ void EntityManager::removeLeavingClients(){
     while(firstClient != nullptr && firstClient->isLeaving){
         tempClient = firstClient->nextClient;
         patience = firstClient->getPatience();
-        if(patience == 0){loseGame -= 1;}
+        if(patience == 0){
+            loseGame -= 1;
+            if(dynamic_cast<Inspector*>(firstClient) != nullptr){ 
+                setReview();
+            }
+        }
         delete firstClient;
         firstClient = tempClient;
     }
