@@ -1,7 +1,7 @@
 #include "GameState.h"
 
 GameState::GameState() {
-    this->restaurant = new Restaurant();
+    this->restaurant = new Restaurant(0);
 	background.load("Sounds/background.wav");
 }
 
@@ -15,7 +15,8 @@ void GameState::tick() {
 	if(restaurant->getMoney() == 100){
 		setNextState("Win");
 		setFinished(true);
-		this->restaurant = new Restaurant();
+		this->restaurant->setLevel(this->restaurant->getLevel()+1);
+		this->restaurant = new Restaurant(this->restaurant->getLevel());
 		if(background.isPlaying()){
 			background.stop();
 		}
@@ -24,7 +25,13 @@ void GameState::tick() {
 	if(restaurant->getLeavingsClients() <= 0 ){
 		setNextState("LoseState");
 		setFinished(true);
-		this->restaurant = new Restaurant();
+		if(this->restaurant->getLevel() == 0){
+			this->restaurant = new Restaurant(this->restaurant->getLevel());	
+		}
+		else{
+			this->restaurant->setLevel(this->restaurant->getLevel()-1);
+			this->restaurant = new Restaurant(this->restaurant->getLevel());
+		}
 		if(background.isPlaying()){
 			background.stop();
 		}

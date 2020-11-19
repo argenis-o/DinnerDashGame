@@ -6,15 +6,17 @@ WinningState::WinningState(){
 
 void WinningState::tick(){
     replayButton->tick();
-    if(replayButton->wasPressed()){
-        setNextState("Game");
-        setFinished(true);
-    }
+	if(replayButton->wasPressed()){
+		setNextState("Game");
+		setFinished(true);
+
+	}
 }
 
 void WinningState::render(){
-
-    replayButton->render();
+    ofSetBackgroundColor(ofColor::yellow);
+    ofDrawBitmapStringHighlight("Temporary State", ofGetWidth()/2, ofGetHeight()/2 - 150, ofColor::gray, ofColor::limeGreen);
+	replayButton->render();
 }
 
 void WinningState::keyPressed(int key){

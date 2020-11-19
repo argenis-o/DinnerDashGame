@@ -40,5 +40,5 @@ void Inspector::tick(){
 
 int Inspector::serve(Burger* burger){
     isLeaving = true;
-    return 10;
+    return 35;
 }

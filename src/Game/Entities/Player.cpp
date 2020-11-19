@@ -4,7 +4,7 @@ Player::Player(int x, int y, int width, int height, ofImage sprite, EntityManage
 
     vector<ofImage> chefAnimframes;
     ofImage temp;
-    this->burger = new Burger(ofGetWidth()-110, 100, 100, 50);
+    this->burger = new Burger(ofGetWidth()-110, 200, 100, 50);
     temp.cropFrom(sprite, 30,3,66,120);
     chefAnimframes.push_back(temp);
     temp.cropFrom(sprite, 159,3,66,120);
