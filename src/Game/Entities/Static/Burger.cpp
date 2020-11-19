@@ -68,10 +68,6 @@ int Burger::quantityOf(stack<Item*> &ingredients,string ingredientName){
             if(temporal.top()->name == ingredientName){temp++;}
         }
 
-        // for (Item *ingredient : ingredients)
-        // {
-        //     if(ingredient->name == ingredientName){temp += 1;}
-        // }
         return temp;
 }
 
@@ -79,7 +75,7 @@ void Burger::render(){
     int counter = 1;
     copy = ingr;
     while(!copy.empty()){
-        copy.top()->sprite.draw(x, y -(counter *10), width, height);
+        copy.top()->sprite.draw(x, y -(counter *10) + 40, width, height);
         copy.pop();
         counter++;
     }

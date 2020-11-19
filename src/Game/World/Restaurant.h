@@ -19,8 +19,9 @@ class Restaurant {
         std::vector<ofImage> people;
         int money = 0;
         int leavingsClients;
+        int LEVEL;
     public:
-        Restaurant();
+        Restaurant(int);
         Player* getPlayer();
         void setPlayer(Player *player);
         Item* cheese;
@@ -41,7 +42,8 @@ class Restaurant {
         int getMoney(){return money;}
         void setMoney(int money){this->money = money;}
         int getLeavingsClients(){return leavingsClients;}
-
+        int getLevel(){return this->LEVEL;}
+        void setLevel(int LEVEL){this->LEVEL = LEVEL;}
         
         vector<Item*> tempIngredient;
 };

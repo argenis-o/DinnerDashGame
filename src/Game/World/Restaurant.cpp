@@ -12,7 +12,9 @@ void Restaurant::setPlayer(Player *player) {
     this->player = player;
 }
 
-Restaurant::Restaurant() {
+Restaurant::Restaurant(int LEVEL) {
+    this->LEVEL = LEVEL;
+
     floor.load("images/floor.jpg");
     entityManager = new EntityManager();
     ofImage chefPlayerImage;
@@ -24,6 +26,7 @@ Restaurant::Restaurant() {
     generateClient();
 
 }
+
 void Restaurant::initItems(){
     ofImage burgerSpriteSheet, cheeseImg, lettuceImg, tomatoImg, burgerImg, botBreadImg, topBreadImg, plateImg;
     burgerSpriteSheet.load("images/burger.png");
@@ -47,6 +50,7 @@ void Restaurant::initItems(){
     tempIngredient.push_back(tomato);
     tempIngredient.push_back(lettuce);
 }
+
 void Restaurant::initCounters(){
     int counterWidth = 96;
     int yOffset = 500;
@@ -117,6 +121,7 @@ void Restaurant::initCounters(){
 
 
 }
+
 void Restaurant::initClients(){
     ofImage temp;
     temp.load("images/People/Car_Designer3Female.png");
@@ -136,6 +141,7 @@ void Restaurant::initClients(){
     temp.load("images/People/Weather_Reporter2Female.png");
     people.push_back(temp);
 }
+
 void Restaurant::tick() {
     ticks++;
     if(ticks % 400 == 0){
@@ -156,27 +162,38 @@ void Restaurant::generateClient(){
     Burger* b = new Burger(72, 100, 50, 25);
     b->addIngredient(topBread);
 
-    for(int i = 0; i<4; i++){
+    for(int i = 0; i< 3+getLevel(); i++){
         int temp = ofRandom(0,4);
         b->addIngredient(tempIngredient[temp]);
     }
     b->addIngredient(botBread);
-
-    entityManager->addClient(new Inspector(0, 50, 64, 72,people[ofRandom(8)], b));
+    
+    int temp = ofRandom(10);
+    if(temp <= 8){
+        entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(8)], b));
+    }else{
+        entityManager->addClient(new Inspector(0, 50, 64, 72,people[ofRandom(8)], b));//add your inspector sprite
+    }
 }
+
 void Restaurant::render() {
     floor.draw(0,0, ofGetWidth(), ofGetHeight());
     player->render();
     entityManager->render();
 
-    ofDrawBitmapStringHighlight("Money: " + to_string(money), ofGetWidth()/2, 10, ofColor::black, ofColor::green);
-    // ofSetColor(256, 256, 256);
+    ofDrawBitmapStringHighlight("\tLevel: " + to_string(getLevel()+1) +
+    "\nStage Goal: " + to_string(getMoney()) + " / 100 $", 
+    ofGetWidth()/2, 10, ofColor::black, ofColor::green);
 }
+
 void Restaurant::serveClient(){
     if(entityManager->firstClient!= nullptr){
-        money += entityManager->firstClient->serve(player->getBurger());
+        if(entityManager->firstClient->getBurger()->equals(player->getBurger())){
+            money += entityManager->firstClient->serve(player->getBurger());
+        }
     }
 }
+
 void Restaurant::keyPressed(int key) {
     player->keyPressed(key);
     if(key == 's'){
