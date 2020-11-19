@@ -4,10 +4,12 @@ GameState::GameState() {
     this->restaurant = new Restaurant();
 	background.load("Sounds/background.wav");
 }
+
 void GameState::tick() {
 	restaurant->tick();
-	if(!background.isPlaying()){
-	background.play();
+
+	if(!background.isPlaying() && (getNextState() == "") ){
+		background.play();
 	}
 
 	if(restaurant->getMoney() == 100){
@@ -15,24 +17,35 @@ void GameState::tick() {
 		setFinished(true);
 		this->restaurant = new Restaurant();
 		if(background.isPlaying()){
-		background.stop();
+			background.stop();
 		}
 	}
+
 	if(restaurant->getLeavingsClients() <= 0 ){
 		setNextState("LoseState");
 		setFinished(true);
 		this->restaurant = new Restaurant();
 		if(background.isPlaying()){
-		background.stop();
+			background.stop();
 		}
 	}
 }
+
 void GameState::render() {
 	restaurant->render();
 }
 
 void GameState::keyPressed(int key){
-	restaurant->keyPressed(key);
+	if(key == ' '){
+		if(background.isPlaying()){
+			background.stop();
+		}
+        setNextState("Pause");
+		setFinished(true);
+    }
+	else{
+		restaurant->keyPressed(key);
+	}
 }
 
 void GameState::mousePressed(int x, int y, int button){
