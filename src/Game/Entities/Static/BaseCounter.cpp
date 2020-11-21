@@ -17,3 +17,7 @@ void BaseCounter::showItem(){
         item->sprite.draw(x+width/2 -25, y-30, 50, 30);
     }
 }
+
+void BaseCounter::tick(){
+    
+}

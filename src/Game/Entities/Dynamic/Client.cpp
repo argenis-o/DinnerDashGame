@@ -3,7 +3,7 @@
 Client::Client(int x, int y, int width, int height, ofImage sprite, Burger* burger): Entity(x, y, width, height, sprite){
     this->burger = burger;
     setPatience(2000);
-    setRed((255,255,255));
+    setRed(ofColor(255,255,255));
 }
 Client::~Client(){
     burger->~Burger();
@@ -13,13 +13,13 @@ void Client::render(){
     burger->render();
     switch(getPatience()){
         case 1500:
-            setRed((255,143,139));
+            setRed(ofColor(255,143,139));
             break;
         case 1000:
-            setRed((255,69,76));
+            setRed(ofColor(255,69,76));
             break;
         case 500:
-            setRed((255,0,0));
+            setRed(ofColor(255,0,0));
             break;
     }
     ofSetColor(getRed());

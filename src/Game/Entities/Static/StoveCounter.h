@@ -4,15 +4,15 @@ class StoveCounter: public BaseCounter{
 private:
     ofSoundPlayer alarm;
     ofImage checkMark;
-    int timer;
-    const int TIME_OF_PATTY = 10000;
     Item* item;
+    int timer = 300;
+    bool start = false;
 public:
     StoveCounter(int x, int y, int width, int height, Item* item, ofImage sprite);
-    int getTimer(){return this->timer;}
-    void setTimer(int timer){this->timer = timer;}
-    void runTimer();
 
+
+    void tick();
     Item* getItem();
     void showItem();
+    void setTimer(int t){this->timer=t;}
     };

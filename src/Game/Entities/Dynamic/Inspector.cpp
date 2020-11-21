@@ -10,13 +10,13 @@ void Inspector::render(){
     burger->render();
     switch(getPatience()){
         case 1500:
-            setRed((255,143,139));
+            setRed(ofColor(255,143,139));
             break;
         case 1000:
-            setRed((255,69,76));
+            setRed(ofColor(255,69,76));
             break;
         case 500:
-            setRed((255,0,0));
+            setRed(ofColor(255,0,0));
             break;
     }
     ofSetColor(getRed());

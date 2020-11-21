@@ -29,6 +29,9 @@ void Player::tick(){
     }else if(x + width >= ofGetWidth()){
         facing = "left";
     }
+    if(cooking){
+        Ticks->tick();
+    }
 }
 
 void Player::render(){
@@ -50,8 +53,15 @@ void Player::keyPressed(int key){
         BaseCounter* ac = getActiveCounter();
         if(ac != nullptr){
             Item* item = ac->getItem();
+            if(item != nullptr && item->name == "patty"){
+                ac->setTimer(300);
+                cooking = false;
+            }
             if(item != nullptr){
                 burger->addIngredient(item);
+            }else{
+                Ticks = ac;
+                cooking = true;
             }
         }
     }
