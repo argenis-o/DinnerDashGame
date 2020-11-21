@@ -2,7 +2,7 @@
 
 WinningState::WinningState(){
 	timer = 500;
-	// victoryImage.load("images/victoryImage.png");
+	victoryImage.load("images/Victory.png");
 	// victorySound.load("Sounds/victorySounds.wav");
 }
 
@@ -22,7 +22,11 @@ void WinningState::tick(){
 }
 
 void WinningState::render(){
-    ofSetBackgroundColor(ofColor::yellow);
+    // ofSetBackgroundColor(ofColor::yellow);
+    // ofDrawBitmapStringHighlight("Timer: " + to_string(timer), ofGetWidth()/2, ofGetHeight()/2 - 150, ofColor::gray, ofColor::limeGreen);
+	ofSetColor(255);
+	victoryImage.draw(0,0,ofGetWidth(),ofGetHeight());
+	ofSetBackgroundColor(ofColor::yellow);
     ofDrawBitmapStringHighlight("Timer: " + to_string(timer), ofGetWidth()/2, ofGetHeight()/2 - 150, ofColor::gray, ofColor::limeGreen);
 }
 
