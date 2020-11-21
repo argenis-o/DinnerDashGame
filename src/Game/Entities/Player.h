@@ -11,6 +11,7 @@ class Player: public Entity{
         Animation *chefAnim;
         Burger *burger;
         EntityManager* entityManager;
+        bool cooking = false;
     public:
         Player(int x, int y, int width, int height, ofImage sprite, EntityManager* em);
         void tick();
@@ -20,6 +21,7 @@ class Player: public Entity{
         void mousePressed(int, int, int);
         void setFacing(string);
         BaseCounter* getActiveCounter();
+        BaseCounter* Ticks;
         Burger* getBurger(){return burger;}
         
 };
