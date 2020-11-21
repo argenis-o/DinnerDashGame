@@ -50,6 +50,9 @@ void GameState::keyPressed(int key){
         setNextState("Pause");
 		setFinished(true);
     }
+	else if(key == '.'){
+		this->restaurant->setMoney(100);
+	}
 	else{
 		restaurant->keyPressed(key);
 	}
