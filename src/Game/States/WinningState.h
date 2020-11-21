@@ -1,8 +1,6 @@
 #pragma once
 
 #include "State.h"
-#include "Button.h"
-
 
 class WinningState: public State{
     public: 
@@ -12,8 +10,8 @@ class WinningState: public State{
 		void render();
 		void keyPressed(int key);
 		void mousePressed(int x, int y, int button);
-	
 	private:
-		//ofImage victory;
-        Button *replayButton;
+		ofImage victoryImage;
+		int timer;
+		ofSoundPlayer victorySound;
 };
