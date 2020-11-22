@@ -140,6 +140,8 @@ void Restaurant::initClients(){
     people.push_back(temp);
     temp.load("images/People/Weather_Reporter2Female.png");
     people.push_back(temp);
+    temp.load("images/People/Inspector.png");
+    people.push_back(temp);
 }
 
 void Restaurant::tick() {
@@ -172,7 +174,7 @@ void Restaurant::generateClient(){
     if(temp <= 8){
         entityManager->addClient(new Client(0, 50, 64, 72, people[ofRandom(8)], b));
     }else{
-        entityManager->addClient(new Inspector(0, 50, 64, 72,people[ofRandom(8)], b));//add your inspector sprite
+        entityManager->addClient(new Inspector(0, 50, 64, 72,people[8], b));//add your inspector sprite
     }
 }
 
@@ -188,8 +190,11 @@ void Restaurant::render() {
 
 void Restaurant::serveClient(){
     if(entityManager->firstClient!= nullptr){
-        if(entityManager->firstClient->getBurger()->equals(player->getBurger())){
-            money += entityManager->firstClient->serve(player->getBurger());
+        money += entityManager->firstClient->serve(player->getBurger(), entityManager->firstClient);
+        int ingrids = 5+getLevel();
+        while(ingrids != 0){
+            player->getBurger()->removeIngredient();
+            ingrids--;
         }
     }
 }

@@ -11,9 +11,9 @@ class Client: public Entity{
     public:
         Client(int, int, int, int, ofImage, Burger*);
         ~Client();
-        void tick();
-        void render();
-        int serve(Burger*);
+        virtual void tick();
+        virtual void render();
+        virtual int serve(Burger*, Client*);
         Client* nextClient=nullptr;
         bool isLeaving=false;
 
@@ -24,6 +24,10 @@ class Client: public Entity{
         
         ofColor getRed(){return this->red;}
         void setRed(ofColor red){this->red.set(red);}
+
+        bool getIsLeaving(){return isLeaving;}
+
+        // void setIsLeaving(bool t){this->isLeaving = t;}
 
 
 };
