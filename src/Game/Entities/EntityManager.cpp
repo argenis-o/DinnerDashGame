@@ -12,7 +12,7 @@ void EntityManager::tick(){
 
 void EntityManager::removeLeavingClients(){
     Client* tempClient = nullptr;
-    while(firstClient != nullptr && firstClient->isLeaving){
+    while(firstClient != nullptr && firstClient->getIsLeaving()){
         tempClient = firstClient->nextClient;
         patience = firstClient->getPatience();
         if(patience == 0){

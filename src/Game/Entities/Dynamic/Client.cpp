@@ -41,7 +41,11 @@ void Client::tick(){
     }
 }
 
-int Client::serve(Burger* burger){
-    isLeaving = true;
-    return 10;
+int Client::serve(Burger* burger, Client* client){
+    if(client == nullptr){return 0;}
+    else if(client->getBurger()->equals(burger)){
+        client->isLeaving = true;
+        return 10;
+    }
+    return serve(burger, client->nextClient);
 }

@@ -37,8 +37,11 @@ void Inspector::tick(){
         nextClient->tick();
     }
 }
-
-int Inspector::serve(Burger* burger){
-    isLeaving = true;
-    return 35;
+int Inspector::serve(Burger* burger, Client* client){
+    if(client == nullptr){return 0;}
+    else if(client->getBurger()->equals(burger)){
+        client->isLeaving = true;
+        return 35;
+    }
+    return serve(burger, client->nextClient);
 }

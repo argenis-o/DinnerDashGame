@@ -11,5 +11,5 @@ public:
     ~Inspector();
     void tick();
     void render();
-    int serve(Burger*);
+    int serve(Burger*, Client*);
 };
