@@ -3,7 +3,7 @@
 LoseState::LoseState() {
 	startButton = new Button(ofGetWidth()/2, ofGetHeight()/2, 64, 50, "Play again");
 	img1.load("images/WhatAreYou.png");
-	// background.load("WhatAreYouclip.mp3");
+	background.load("Sounds/WhatAreYouclip.wav");
 }
 void LoseState::tick() {
 	startButton->tick();
@@ -12,9 +12,9 @@ void LoseState::tick() {
 		setFinished(true);
 
 	}
-	// if(!background.isPlaying() && (getNextState() == "") ){
-	// 	background.play();
-	// }
+	if(!background.isPlaying() && (getNextState() == "") ){
+		background.play();
+	}
 }
 void LoseState::render() {
 	ofSetBackgroundColor(230, 230, 250);
