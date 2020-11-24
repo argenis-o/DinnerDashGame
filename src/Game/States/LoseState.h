@@ -6,6 +6,7 @@
 class LoseState : public State {
 private:
 	ofImage img1;
+	ofImage letter;
 	Button *startButton;
 
 public:

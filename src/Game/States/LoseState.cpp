@@ -1,9 +1,10 @@
 #include "LoseState.h"
 
 LoseState::LoseState() {
-	startButton = new Button(ofGetWidth()/2, ofGetHeight()/2, 64, 50, "Play again");
+	startButton = new Button(ofGetWidth()/2, ofGetHeight()/2, 364, 350, "\n");
 	img1.load("images/WhatAreYou.png");
 	background.load("Sounds/WhatAreYouclip.wav");
+	letter.load("images/PlayAgain.png");
 }
 void LoseState::tick() {
 	startButton->tick();
@@ -21,6 +22,7 @@ void LoseState::render() {
 
 	ofSetColor(255);
 	img1.draw(0,0,ofGetWidth(),ofGetHeight());
+	letter.draw(ofGetWidth()/2, ofGetHeight()/2, 364, 350);
 
 	startButton->render();
 }
