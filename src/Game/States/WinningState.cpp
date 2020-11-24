@@ -27,7 +27,6 @@ void WinningState::render(){
 }
 
 void WinningState::keyPressed(int key){
-
 }
 
 void WinningState::mousePressed(int x, int y, int button){
@@ -37,4 +36,3 @@ void WinningState::reset(){
 	setFinished(false);
 	setNextState("");
 }
-

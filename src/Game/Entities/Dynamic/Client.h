@@ -26,8 +26,4 @@ class Client: public Entity{
         void setRed(ofColor red){this->red.set(red);}
 
         bool getIsLeaving(){return isLeaving;}
-
-        // void setIsLeaving(bool t){this->isLeaving = t;}
-
-
 };

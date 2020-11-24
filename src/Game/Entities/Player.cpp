@@ -72,6 +72,7 @@ void Player::keyPressed(int key){
         }
     }
 }
+
 BaseCounter* Player::getActiveCounter(){
     for(Entity* e:entityManager->entities){
         BaseCounter* c = dynamic_cast<BaseCounter*>(e);
@@ -81,10 +82,11 @@ BaseCounter* Player::getActiveCounter(){
     }
     return nullptr;
 }
+
 void Player::keyReleased(int key){
 }
-void Player::mousePressed(int x, int y, int button){
 
+void Player::mousePressed(int x, int y, int button){
 }
 
 void Player::setFacing(string facing){

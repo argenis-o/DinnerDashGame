@@ -27,8 +27,6 @@ void Burger::removeIngredient(){
 }
 
 bool Burger::equals(Burger *target){// same ingredients and quantities //order is irrelevant
-    // if(this->ingr.size() == target->ingr.size()){
-    //     string temp;
         bool flag = true;
         if(quantityOf(this->ingr, "cheese") != quantityOf(target->ingr,"cheese")){
             flag = false;
@@ -50,23 +48,16 @@ bool Burger::equals(Burger *target){// same ingredients and quantities //order i
             flag = false;
         }
         return flag;
-    //  }else{
-    //     return false;
-    // }
 }
 
-//vector<Item*> ingredients
-
 int Burger::quantityOf(stack<Item*> &ingredients,string ingredientName){
-    int temp = 0;
-        
+    int temp = 0;        
     stack<Item*> cpy = ingredients;
     while(!cpy.empty()){
         if(cpy.top()->name == ingredientName){
             temp++;
         }
         cpy.pop();
-        //ingredients.pop();
     }
 
     return temp;

@@ -9,10 +9,8 @@ private:
     bool start = false;
 public:
     StoveCounter(int x, int y, int width, int height, Item* item, ofImage sprite);
-
-
     void tick();
     Item* getItem();
     void showItem();
     void setTimer(int t){this->timer=t;}
-    };
+};

@@ -24,7 +24,6 @@ void Client::render(){
     }
     ofSetColor(getRed());
     sprite.draw(x, y, width, height);
-    // ofDrawRectangle(getBounds());
     if(nextClient != nullptr){
         nextClient->render();
     }
